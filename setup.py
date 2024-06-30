@@ -480,6 +480,11 @@ elif machine in ("armv6", "armhf", "armv6l"):
         "-DWEBRTC_ARCH_32_BITS",
         "-DPFFFT_SIMD_DISABLE",
     ]
+elif machine in ("riscv64"):
+    # RISC-V 64 bits
+    machine_cflags += [
+            "-DWEBRTC_ARCH_64_BITS",
+    ]
 else:
     raise ValueError(f"Unsupported machine: {machine}")
 
